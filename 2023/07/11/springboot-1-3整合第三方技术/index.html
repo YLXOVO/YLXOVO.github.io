@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>springboot---1.3整合第三方技术 | YLXOVO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.3整合第三方技术整合JUnit整合MyBatis整合MyBatis-plus整合Druid 一、整合JUnit创建springboot模块的时候，junit 是默认加入的测试类使用@SpringBootTest修饰使用自动装配的形式添加要测试的对象 1234567891011@SpringBootTestclass Springboot04JunitApplicationTests &amp;#123">
+  <meta name="description" content="摘要：整合第三方技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springboot---1.3整合第三方技术">
 <meta property="og:url" content="http://example.com/2023/07/11/springboot-1-3%E6%95%B4%E5%90%88%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/index.html">
 <meta property="og:site_name" content="YLXOVO">
-<meta property="og:description" content="1.3整合第三方技术整合JUnit整合MyBatis整合MyBatis-plus整合Druid 一、整合JUnit创建springboot模块的时候，junit 是默认加入的测试类使用@SpringBootTest修饰使用自动装配的形式添加要测试的对象 1234567891011@SpringBootTestclass Springboot04JunitApplicationTests &amp;#123">
+<meta property="og:description" content="摘要：整合第三方技术">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/29779044/1688959014899-b41fbfe2-ab7d-42e1-b113-758e3a0da2af.png#averageHue=%23898572&clientId=u5fa981b5-0c26-4&from=paste&height=245&id=ucbb0300f&originHeight=306&originWidth=1786&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=75876&status=done&style=none&taskId=u96427cad-d152-40ea-877f-a05416edc7c&title=&width=1428.8">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2023/png/29779044/1688959065140-4621a678-d6e8-4e2c-9235-63c7f771d301.png#averageHue=%23928b5c&clientId=u5fa981b5-0c26-4&from=paste&height=408&id=uaa543d0b&originHeight=510&originWidth=1541&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=107077&status=done&style=none&taskId=ub5f49983-e5b9-42e1-958c-f2a56475dcf&title=&width=1232.8">
 <meta property="og:image" content="file:///C:/Users/%E6%9D%A8%E4%B9%90%E6%98%95/AppData/Roaming/marktext/images/2023-07-11-10-17-43-image.png?msec=1689052552687">
 <meta property="og:image" content="file:///C:/Users/%E6%9D%A8%E4%B9%90%E6%98%95/AppData/Roaming/marktext/images/2023-07-11-10-20-09-image.png?msec=1689052552687">
 <meta property="article:published_time" content="2023-07-11T05:13:58.000Z">
-<meta property="article:modified_time" content="2023-07-11T05:16:24.530Z">
+<meta property="article:modified_time" content="2023-07-11T05:20:31.734Z">
 <meta property="article:author" content="杨乐昕">
 <meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary">
@@ -229,7 +229,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-3整合第三方技术"><a href="#1-3整合第三方技术" class="headerlink" title="1.3整合第三方技术"></a>1.3整合第三方技术</h1><p>整合JUnit<br>整合MyBatis<br>整合MyBatis-plus<br>整合Druid</p>
+        <p>摘要：整合第三方技术</p>
+<span id="more"></span>
+
+<h1 id="1-3整合第三方技术"><a href="#1-3整合第三方技术" class="headerlink" title="1.3整合第三方技术"></a>1.3整合第三方技术</h1><p>整合JUnit<br>整合MyBatis<br>整合MyBatis-plus<br>整合Druid</p>
 <h2 id="一、整合JUnit"><a href="#一、整合JUnit" class="headerlink" title="一、整合JUnit"></a>一、整合JUnit</h2><p>创建springboot模块的时候，junit 是默认加入的<br>测试类使用@SpringBootTest修饰<br>使用自动装配的形式添加要测试的对象</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootTest</span><br><span class="line">class Springboot04JunitApplicationTests &#123;</span><br><span class="line">    //1. 添加要测试的对象</span><br><span class="line">    @Autowired</span><br><span class="line">    private BookDao bookDao;</span><br><span class="line"></span><br><span class="line">    @Test</span><br><span class="line">    void contextLoads() &#123;</span><br><span class="line">        bookDao.save();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
