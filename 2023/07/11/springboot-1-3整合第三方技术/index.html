@@ -17,10 +17,10 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/07/11/springboot-1-3%E6%95%B4%E5%90%88%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/picture/1688959014899-b41fbfe2-ab7d-42e1-b113-758e3a0da2af.png">
 <meta property="og:image" content="http://example.com/2023/07/11/springboot-1-3%E6%95%B4%E5%90%88%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/picture/1688959065140-4621a678-d6e8-4e2c-9235-63c7f771d301.png">
-<meta property="og:image" content="file:///C:/Users/%E6%9D%A8%E4%B9%90%E6%98%95/AppData/Roaming/marktext/images/2023-07-11-10-17-43-image.png?msec=1689052552687">
-<meta property="og:image" content="file:///C:/Users/%E6%9D%A8%E4%B9%90%E6%98%95/AppData/Roaming/marktext/images/2023-07-11-10-20-09-image.png?msec=1689052552687">
+<meta property="og:image" content="http://example.com/2023/07/11/springboot-1-3%E6%95%B4%E5%90%88%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/picture/2023-07-11-10-17-43-image.png">
+<meta property="og:image" content="http://example.com/2023/07/11/springboot-1-3%E6%95%B4%E5%90%88%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/picture/2023-07-11-10-20-09-image.png">
 <meta property="article:published_time" content="2023-07-11T05:13:58.000Z">
-<meta property="article:modified_time" content="2023-07-11T05:34:22.449Z">
+<meta property="article:modified_time" content="2023-07-11T05:41:14.904Z">
 <meta property="article:author" content="杨乐昕">
 <meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary">
@@ -251,14 +251,14 @@
 <p>需要添加的第三方技术无法通过勾选确定时，需要手工添加坐标</p>
 <ol>
 <li><p>创建新的模块，依赖选择不需要选择mybatis framework，选择MySQL的驱动就可以了</p>
-<p><img src="file:///C:/Users/%E6%9D%A8%E4%B9%90%E6%98%95/AppData/Roaming/marktext/images/2023-07-11-10-17-43-image.png?msec=1689052552687"></p>
+<p><img src="/2023/07/11/springboot-1-3%E6%95%B4%E5%90%88%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/picture/2023-07-11-10-17-43-image.png"></p>
 </li>
 <li><p>⭐手动添加springboot整合MyBatis-plus的坐标，可以通过<a target="_blank" rel="noopener" href="https://mvnrepository.com/">mvnrepository</a>获取</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>由于springboot没有收录mp的坐标版本，所以需要指定对应的版本号</p>
 <p>添加了mybatis-plus-boot-starter 之后，就不用添加springbootstarter</p>
-<p><img src="file:///C:/Users/%E6%9D%A8%E4%B9%90%E6%98%95/AppData/Roaming/marktext/images/2023-07-11-10-20-09-image.png?msec=1689052552687"></p>
+<p><img src="/2023/07/11/springboot-1-3%E6%95%B4%E5%90%88%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/picture/2023-07-11-10-20-09-image.png"></p>
 </li>
 <li><p>定义数据层接口与映射配置，继承BaseMapper</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Mapper</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">UserDao</span> <span class="keyword">extends</span> <span class="title class_">BaseMapper</span>&lt;User&gt; &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
