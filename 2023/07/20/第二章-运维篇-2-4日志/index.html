@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2023 | YLXOVO</title>
+  <title>第二章-运维篇-2.4日志 | YLXOVO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="YLXOVO">
-<meta property="og:url" content="http://example.com/archives/2023/index.html">
+  <meta name="description" content="摘要：日志基础操作,快速开发日志对象 @Slf4j，文件记录日志">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第二章-运维篇-2.4日志">
+<meta property="og:url" content="http://example.com/2023/07/20/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-4%E6%97%A5%E5%BF%97/index.html">
 <meta property="og:site_name" content="YLXOVO">
+<meta property="og:description" content="摘要：日志基础操作,快速开发日志对象 @Slf4j，文件记录日志">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-20T11:09:14.000Z">
+<meta property="article:modified_time" content="2023-07-20T11:12:30.555Z">
 <meta property="article:author" content="YLXOVO">
+<meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="YLXOVO" type="application/atom+xml">
@@ -199,36 +204,73 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-第二章-运维篇-2-4日志" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      第二章-运维篇-2.4日志
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/20/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-4%E6%97%A5%E5%BF%97/" class="archive-article-date">
+
+        
+        <a href="/2023/07/20/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-4%E6%97%A5%E5%BF%97/" class="archive-article-date">
   	<time datetime="2023-07-20T11:09:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/20/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-4%E6%97%A5%E5%BF%97/">第二章-运维篇-2.4日志</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要：日志基础操作,快速开发日志对象 @Slf4j，文件记录日志</p>
+<span id="more"></span>
+<h2 id="2-4-日志"><a href="#2-4-日志" class="headerlink" title="2.4 日志"></a>2.4 日志</h2><h3 id="日志基础操作"><a href="#日志基础操作" class="headerlink" title="日志基础操作"></a>日志基础操作</h3><p>编程期调试代码</p>
+<p>运营期记录信息</p>
+<ul>
+<li><p>记录日常运营重要信息（峰值流量、平均响应时长）</p>
+</li>
+<li><p>记录应用报错信息（错误堆栈）</p>
+</li>
+<li><p>记录运维过程数据（扩容、宕机、报警…）</p>
+</li>
+</ul>
+<ol>
+<li><p>创建记录日志对象</p>
+</li>
+<li><p>设置日志输出级别</p>
+<p>日志的默认级别：debug&lt;info&lt;warn&lt;error</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开启debug模式，输出调试信息，常用于检查系统运行状况</span></span><br><span class="line"><span class="attr">debug:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置日志级别，root表示根节点，即整体应用日志界别</span></span><br><span class="line"><span class="attr">logging:</span></span><br><span class="line">  <span class="attr">level:</span></span><br><span class="line">    <span class="attr">root:</span> <span class="string">info</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置日志组，控制指定包对应的日志输出级别</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">logging:</span></span><br><span class="line">  <span class="comment">#设置日志组</span></span><br><span class="line">  <span class="attr">group:</span></span><br><span class="line">    <span class="comment"># 自定义组名，设置当前组中所包含的包</span></span><br><span class="line">    <span class="attr">ebank:</span> <span class="string">com.ylxstudy.controller</span></span><br><span class="line">  <span class="attr">level:</span></span><br><span class="line">    <span class="attr">root:</span> <span class="string">info</span></span><br><span class="line">    <span class="comment"># 为对应组设置日志级别</span></span><br><span class="line">    <span class="attr">ebank:</span> <span class="string">debug</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="快速开发日志对象-Slf4j"><a href="#快速开发日志对象-Slf4j" class="headerlink" title="快速开发日志对象 @Slf4j"></a>快速开发日志对象 @Slf4j</h3><p>使用lombok提供的注解@Slf4j简化开发，减少日志对象的声明操作</p>
+<ol>
+<li>导入lombok依赖</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+<ol start="2">
+<li><p>在对应的要加上记录日志对象的上面加上@Slf4j</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/books&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BookController</span> &#123;</span><br><span class="line">    <span class="meta">@GetMapping</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getById</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;springboot is running&quot;</span>);</span><br><span class="line">        log.debug(<span class="string">&quot;debug...&quot;</span>);</span><br><span class="line">        log.info(<span class="string">&quot;info...&quot;</span> );</span><br><span class="line">        log.warn(<span class="string">&quot;warn...&quot;</span>);</span><br><span class="line">        log.error(<span class="string">&quot;error...&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;springboot is running ...&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="文件记录日志"><a href="#文件记录日志" class="headerlink" title="文件记录日志"></a>文件记录日志</h3><ul>
+<li><p>设置日志文件</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">logging:</span></span><br><span class="line">  <span class="attr">file:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">server.log</span></span><br><span class="line">  <span class="attr">logback:</span></span><br><span class="line">    <span class="attr">rollingpolicy:</span></span><br><span class="line">      <span class="attr">max-file-size:</span> <span class="string">4KB</span></span><br><span class="line">      <span class="attr">file-name-pattern:</span> <span class="string">server.%d&#123;yyyy-MM-dd&#125;.%i.log</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>日志文件详细配置</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">logging:</span></span><br><span class="line">  <span class="attr">logback:</span></span><br><span class="line">    <span class="attr">rollingpolicy:</span></span><br><span class="line">      <span class="attr">max-file-size:</span> <span class="string">4KB</span></span><br><span class="line">      <span class="attr">file-name-pattern:</span> <span class="string">server.%d&#123;yyyy-MM-dd&#125;.%i.log</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -240,133 +282,119 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/07/20/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-4%E6%97%A5%E5%BF%97/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/17/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-3%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2023-07-17T01:45:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2023/07/17/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-3%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第二章-运维篇-2.3多环境开发</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/17/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-3%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91/">第二章-运维篇-2.3多环境开发</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E6%97%A5%E5%BF%97"><span class="toc-number">1.</span> <span class="toc-text">2.4 日志</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">日志基础操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97%E5%AF%B9%E8%B1%A1-Slf4j"><span class="toc-number">1.2.</span> <span class="toc-text">快速开发日志对象 @Slf4j</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E8%AE%B0%E5%BD%95%E6%97%A5%E5%BF%97"><span class="toc-number">1.3.</span> <span class="toc-text">文件记录日志</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/16/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87/" class="archive-article-date">
-  	<time datetime="2023-07-16T03:41:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-16</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/16/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87/">第二章 运维篇</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/11/springboot-1-3%E6%95%B4%E5%90%88%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/" class="archive-article-date">
-  	<time datetime="2023-07-11T05:13:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/11/springboot-1-3%E6%95%B4%E5%90%88%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/">springboot---1.3整合第三方技术</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -387,8 +415,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
