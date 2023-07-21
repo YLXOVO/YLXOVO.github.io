@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>第三章-实用开发篇-3-2高级配置 | YLXOVO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="3.2 高级配置第三方bean属性绑定@ConfigurationProperties不仅可以给自定义类绑定属性，也可以为第三方bean绑定属性 引入第三方配置的依赖之后， 创建对应的配置类 1234567&#x2F;&#x2F;设置成一个bean 受spring容器管理    @Bean    @ConfigurationProperties(prefix &#x3D; &quot;datasource&quot;)">
+  <meta name="description" content="摘要：@ConfigurationProperties；松散绑定；常用计量单位@DurationUnit  @DataSizeUnit；数据校验">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第三章-实用开发篇-3-2高级配置">
 <meta property="og:url" content="http://example.com/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="YLXOVO">
-<meta property="og:description" content="3.2 高级配置第三方bean属性绑定@ConfigurationProperties不仅可以给自定义类绑定属性，也可以为第三方bean绑定属性 引入第三方配置的依赖之后， 创建对应的配置类 1234567&#x2F;&#x2F;设置成一个bean 受spring容器管理    @Bean    @ConfigurationProperties(prefix &#x3D; &quot;datasource&quot;)">
+<meta property="og:description" content="摘要：@ConfigurationProperties；松散绑定；常用计量单位@DurationUnit  @DataSizeUnit；数据校验">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/assets/2023-07-21-08-24-37-image.png">
 <meta property="og:image" content="http://example.com/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/assets/2023-07-21-08-36-48-image.png">
 <meta property="og:image" content="http://example.com/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/assets/2023-07-21-08-27-59-image.png">
 <meta property="og:image" content="http://example.com/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/assets/2023-07-21-08-31-11-image.png">
 <meta property="article:published_time" content="2023-07-21T12:58:44.000Z">
-<meta property="article:modified_time" content="2023-07-21T13:09:09.031Z">
+<meta property="article:modified_time" content="2023-07-21T13:17:18.513Z">
 <meta property="article:author" content="YLXOVO">
 <meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary">
@@ -229,7 +229,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <span id="more"></span>
+        <p>摘要：@ConfigurationProperties；松散绑定；常用计量单位@DurationUnit  @DataSizeUnit；数据校验</p>
+<span id="more"></span>
 <h2 id="3-2-高级配置"><a href="#3-2-高级配置" class="headerlink" title="3.2 高级配置"></a>3.2 高级配置</h2><h3 id="第三方bean属性绑定"><a href="#第三方bean属性绑定" class="headerlink" title="第三方bean属性绑定"></a>第三方bean属性绑定</h3><p>@ConfigurationProperties不仅可以给自定义类绑定属性，也可以为第三方bean绑定属性</p>
 <p>引入第三方配置的依赖之后，</p>
 <p>创建对应的配置类</p>
