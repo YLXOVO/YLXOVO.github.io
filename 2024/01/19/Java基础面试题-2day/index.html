@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2023/7 | YLXOVO</title>
+  <title>Java基础面试题-2day | YLXOVO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="YLXOVO">
-<meta property="og:url" content="http://example.com/archives/2023/07/index.html">
+  <meta name="description" content="摘要：Java基础面试题以及个人总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础面试题-2day">
+<meta property="og:url" content="http://example.com/2024/01/19/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-2day/index.html">
 <meta property="og:site_name" content="YLXOVO">
+<meta property="og:description" content="摘要：Java基础面试题以及个人总结">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2024/01/19/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-2day/assets/Snipaste_2024-01-19_21-05-53.png">
+<meta property="og:image" content="http://example.com/2024/01/19/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-2day/assets/Snipaste_2024-01-19_21-06-15.png">
+<meta property="article:published_time" content="2024-01-19T13:00:04.000Z">
+<meta property="article:modified_time" content="2024-01-19T13:09:23.272Z">
 <meta property="article:author" content="YLXOVO">
+<meta property="article:tag" content="Java Java面试题">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/01/19/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-2day/assets/Snipaste_2024-01-19_21-05-53.png">
   
     <link rel="alternative" href="/atom.xml" title="YLXOVO" type="application/atom+xml">
   
@@ -199,288 +207,188 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java基础面试题-2day" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java基础面试题-2day
+    </h1>
+  
+
+        
+        <a href="/2024/01/19/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-2day/" class="archive-article-date">
+  	<time datetime="2024-01-19T13:00:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-19</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要：Java基础面试题以及个人总结</p>
+<span id="more"></span>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><ol>
+<li>创建一个对象用什么运算符，对象实体和对象引用有什么不同？</li>
+</ol>
+<p>创建对象使用new<br>String A &#x3D; new String();<br>A即为对象引用，通过new运算符，创建String()类型的对象实体。<br>对象引用的存储位置在栈内存<br>对象实体的存储位置在堆内存</p>
+<ol start="2">
+<li>对象相等和引用相等的区别</li>
+</ol>
+<p>对象相等指的是对象所保存的内容是否行相同<br>引用相等指的是对象的地址是否相同</p>
+<ol start="3">
+<li>如果一个类没有声明构造方法，该程序能正常运行吗</li>
+</ol>
+<p>可以，每一个类都有一个默认存在的无参构造方法，当我们没有进行构造方法的重载，创建新对象时，初始化使用的就是无参构造方法；如果我们在类中添加了有参数的构造方法，就要把无参构造方法显示的写出来，可以为我们创建对象时减去一些没有必要的错误。</p>
+<ol start="4">
+<li>构造方法的特点</li>
+</ol>
+<p>构造方法名和类名一致<br>构造方法没有返回值，且不能使用void<br>构造方法不需要调用，当我们进行对象的创建的时候自动调用<br>构造方法不能被重写，但是能重载</p>
+<ol start="5">
+<li>面向对象三大特征</li>
+</ol>
+<p>封装，继承，多态<br>封装：将方法内的属性进行私有化，通过方法向外界提供修改获得<br>继承：子类继承父类，可以拥有父类的所有属性和方法，包括私有属性和方法，注意这里只是拥有，子类是不能访问父类的私有的属性和方法的，只是拥有！<br>多态：父类的引用指向子类的实例，<br>对象类型和引用类型之间有继承和实现的关系，也就是引用类型可以是接口，也可以是父类，对象类型是实现了接口的类，或者是继承了父类的子类。</p>
+<ol start="6">
+<li>接口和抽象类有什么共同点和区别</li>
+</ol>
+<p>接口和抽象类都不能被实例化，都可以包含抽象方法，都可以有默认实现的方法<br>接口中的成员变量默认都是public static final修饰，而且必须赋值且不能被修改<br>抽象类中的成员变量默认default，可以在子类被重新定义，也可以被重新赋值</p>
+<ol start="7">
+<li>浅拷贝和深拷贝⭐</li>
+</ol>
+<p>参考文章：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ysocean/p/8482979.html">https://www.cnblogs.com/ysocean/p/8482979.html</a><br>总结：浅拷贝指的是实现Java的Cloneable接口，对clone方法进行重写之后，克隆出一个和原对象一样的对象，原理是复制引用，原对象和克隆对象的地址相同<br>而深拷贝是将整个对象地址所指的堆中数据整份复制出来新的一份，克隆出来的对象地址是不相同的<br><img src="/2024/01/19/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-2day/assets/Snipaste_2024-01-19_21-05-53.png" alt="image.png"><br><img src="/2024/01/19/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-2day/assets/Snipaste_2024-01-19_21-06-15.png" alt="image.png"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/22/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-4-1%EF%BC%8C4-2/" class="archive-article-date">
-  	<time datetime="2023-07-22T15:14:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/22/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-4-1%EF%BC%8C4-2/">第四章-实用开发篇-4-1，4-2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java Java面试题</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/01/19/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-2day/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2023-07-21T12:58:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2024/01/16/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-1day/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java基础面试题-1day</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/">第三章-实用开发篇-3-2高级配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text">面向对象</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-1%E7%83%AD%E9%83%A8%E7%BD%B2/" class="archive-article-date">
-  	<time datetime="2023-07-21T00:44:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-21</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-1%E7%83%AD%E9%83%A8%E7%BD%B2/">第三章-实用开发篇-3.1热部署</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/20/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-4%E6%97%A5%E5%BF%97/" class="archive-article-date">
-  	<time datetime="2023-07-20T11:09:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/20/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-4%E6%97%A5%E5%BF%97/">第二章-运维篇-2.4日志</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/17/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-3%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2023-07-17T01:45:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/17/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-3%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91/">第二章-运维篇-2.3多环境开发</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/16/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87/" class="archive-article-date">
-  	<time datetime="2023-07-16T03:41:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/16/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87/">第二章 运维篇</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/11/springboot-1-3%E6%95%B4%E5%90%88%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/" class="archive-article-date">
-  	<time datetime="2023-07-11T05:13:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/11/springboot-1-3%E6%95%B4%E5%90%88%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/">springboot---1.3整合第三方技术</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -501,8 +409,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
