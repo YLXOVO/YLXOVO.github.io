@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>理解DTO,VO,DAO,PO,BO | YLXOVO</title>
+  <title>Java基础面试题-3day | YLXOVO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="摘要：如何理解DTO,VO,DAO,PO,BO">
+  <meta name="description" content="摘要：Java基础面试题以及个人总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理解DTO,VO,DAO,PO,BO">
-<meta property="og:url" content="http://example.com/2023/12/20/%E7%90%86%E8%A7%A3DTO-VO-DAO-PO-BO/index.html">
+<meta property="og:title" content="Java基础面试题-3day">
+<meta property="og:url" content="http://example.com/2024/01/23/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-3day/index.html">
 <meta property="og:site_name" content="YLXOVO">
-<meta property="og:description" content="摘要：如何理解DTO,VO,DAO,PO,BO">
+<meta property="og:description" content="摘要：Java基础面试题以及个人总结">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-20T02:51:58.000Z">
-<meta property="article:modified_time" content="2023-12-20T02:53:42.023Z">
+<meta property="article:published_time" content="2024-01-23T15:19:51.000Z">
+<meta property="article:modified_time" content="2024-01-23T15:20:16.244Z">
 <meta property="article:author" content="YLXOVO">
-<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="Java Java面试题">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="YLXOVO" type="application/atom+xml">
@@ -204,36 +204,76 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-理解DTO-VO-DAO-PO-BO" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java基础面试题-3day" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      理解DTO,VO,DAO,PO,BO
+      Java基础面试题-3day
     </h1>
   
 
         
-        <a href="/2023/12/20/%E7%90%86%E8%A7%A3DTO-VO-DAO-PO-BO/" class="archive-article-date">
-  	<time datetime="2023-12-20T02:51:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-20</time>
+        <a href="/2024/01/23/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-3day/" class="archive-article-date">
+  	<time datetime="2024-01-23T15:19:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>摘要：如何理解DTO,VO,DAO,PO,BO</p>
+        <p>摘要：Java基础面试题以及个人总结</p>
 <span id="more"></span>
-<h2 id="DTO-Data-Transfer-Object-数据传输对象"><a href="#DTO-Data-Transfer-Object-数据传输对象" class="headerlink" title="DTO Data Transfer Object 数据传输对象"></a>DTO Data Transfer Object 数据传输对象</h2><p>一般作为前端后端的传输的纽带</p>
-<p>有两种体现方式<br>一种是后端<br>另外一种就是前端<br><strong>后端</strong><br>体现在表现层，前端发送请求到后端，后端创建一个DTO类封装对象专门接收网络中的数据传输<br>将这个封装对象用在后端接口上面作为接收参数</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping(&quot;/online&quot;)</span></span><br><span class="line"><span class="keyword">public</span> BaseResponse&lt;Boolean&gt; <span class="title function_">onlineInterfaceInfo</span><span class="params">(<span class="meta">@RequestBody</span> IdRequest idRequest,HttpServletRequest request)</span> </span><br></pre></td></tr></table></figure>
-<h2 id="PO-Persistant-Object-持久层对象"><a href="#PO-Persistant-Object-持久层对象" class="headerlink" title="PO Persistant Object 持久层对象"></a>PO Persistant Object 持久层对象</h2><p>一般是对应数据库字段的一个类<br>比如创建了User表，有 id username password 字段<br>要在Java后端中去使用数据库，就必须创建一个对应的对象来映射数据库中的字段<br>也就是User 类，属性是 Integer id , String username , String password  以及getter setter方法和tostring方法</p>
-<h2 id="VO-Value-Object-视图对象"><a href="#VO-Value-Object-视图对象" class="headerlink" title="VO Value Object 视图对象"></a>VO Value Object 视图对象</h2><p>场景：前端查询含有部门名称的某个人的信息，发送请求到后端，后端查询返回结果为一个User对象，User对象对应的是用户表，部门名称在部门表中<br>VO 专门对后端查询数据库之后的返回值，通过创建一个有对应数据库字段或者两张表格的连接表的对象PO进行接收，对象是要发送到前端进行渲染展示的，所以需要一个对象来传输，即VO</p>
-<h2 id="DAO-Data-Access-Object-数据访问对象"><a href="#DAO-Data-Access-Object-数据访问对象" class="headerlink" title="DAO Data Access Object 数据访问对象"></a>DAO Data Access Object 数据访问对象</h2><p>主要用来访问数据库的对象，一般会在里面进行对数据的操作<br>其实就是我们写的mapper</p>
-<h2 id="BO-Business-Object-业务逻辑对象"><a href="#BO-Business-Object-业务逻辑对象" class="headerlink" title="BO Business Object 业务逻辑对象"></a>BO Business Object 业务逻辑对象</h2><p>其实就是我们写的service接口以及实现类</p>
-<h2 id="从前端到后端，再到数据库的基本过程"><a href="#从前端到后端，再到数据库的基本过程" class="headerlink" title="从前端到后端，再到数据库的基本过程"></a>从前端到后端，再到数据库的基本过程</h2><p>前端 -&gt; DTO -&gt; BO(Service) -&gt; DAO(mapper) -&gt; 数据库 查询结果返回 封装到 -&gt; PO(持久层对象) -&gt; VO(视图对象) -&gt; 前端</p>
+<h1 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h1><ol>
+<li>Object类有哪些常见的方法</li>
+</ol>
+<p>native 修饰符修饰的方法，表示这个方法我不实现，交给操作系统实现<br>getClass()：用于返回当前运行对象的class对象<br>hashCode()：返回对象的哈希值；一般用于Java的hashmap<br>equals()：在Object类中，表示的是判断两个对象的地址是否相同，而String类重写了equals方法，表示两个对象的值是否相等<br>clone()：创建并返回对对象的一份拷贝；浅拷贝和深拷贝<br>toString()：在Object类中，表示返回类的实例的哈希码的16进制字符串；所有Object的子类都应该重写该方法</p>
+<ol start="2">
+<li>&#x3D;&#x3D; 和 equals方法的区别</li>
+</ol>
+<p>在Java中，只有值传递，没有引用传递。<br>对于基本数据类型，&#x3D;&#x3D; 比较的是两个基本数据类型变量的值<br>对于引用类型，&#x3D;&#x3D; 比较的就是两个引用类型变量，也就是对象的地址<br>equals方法在没有被重写时，表示的是比较两个对象的地址是否相同<br>重写之后根据重写的内容比较，比如String比较的就是两个对象的值<br>个人理解：Java将内存分为了两个部分，栈 和 堆 ；基本数据类型定义的变量直接存储在栈中，引用类型定义的对象引用（地址）存放在栈，地址指向的真正的数据则存放在堆中。Java只有值传递，当我们之后&#x3D;&#x3D;比较的时候，对象引用直接比较的是地址，而不是我们的堆中的真正数据。所以当我们有需求要比较的是对象所指向的真实数据，可以通过重写的equals方法，进行比较值。</p>
+<ol start="3">
+<li>hashCode()方法有什么用？</li>
+</ol>
+<p>确认该对象在哈希表的哪个索引位置，int是整数</p>
+<ol start="4">
+<li>为什么要有hashcode</li>
+</ol>
+<p>在Java数据结构中的HashSet中，当要添加一个对象时，会计算出来该对象的hashcode，并且与在hashset中的其他对象的hashcode进行比较，如果出现相同，则将相同的hashcode的对象通过equals方法进行再次比较是否真的相同，如果相同，则hashset不会添加成功。如果在一开始hashcode就不相同，则会在hashset中散列的存储。<br>总结下来，hashcode可以使得一些数据结构中equals方法的使用次数减低，提高效率<br>hashcode相同的两个对象不一定相同，因为可能会发生哈希碰撞。<br>hashcode相同的两个对象，通过equals方法之后，仍然相同，才能确认两个对象相同。<br>这就是为什么重写equals方法一定也要重写hashcode方法。<br>构成两个相等的对象的前提是，hashcode相同，然后再equals方法</p>
+<h1 id="String"><a href="#String" class="headerlink" title="String"></a>String</h1><ol>
+<li>String StringBuffer StringBuilder 的区别</li>
+</ol>
+<p><em>可变性</em><br>string是不可变的<br>StringBuffer StringBuilder都继承AbstractStringBuilder类，该类实现了Appendable接口，使用字符数组存储字符串，使用了append方法来修改字符串<br><em>线程安全性</em><br><em>线程安全：</em><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/337921529"><em>https://zhuanlan.zhihu.com/p/337921529</em></a>_ _<br>String是不可变的，可以看成常量，属于线程安全的<br>StringBuffer 对方法添加了同步锁，属于线程安全的<br>StringBuilder 没有对方法添加同步锁，不属于线程安全的<br><em>性能</em><br>String 类型的对象要进行改变的时候，都需要重新创建新的String对象<br>StringBuffer则只是对对象本身进行操作不需要创建新的对象<br>StringBuilder和StringBuffer一样，性能会比StringBuffer提高10%到15%，但是需要冒线程不安全的风险<br>如果操作的数据很少，使用String类型<br>如果操作的数据多，且是单线程，使用StringBuilder<br>如果操作的数据多，且是多线程，使用StringBuffer</p>
+<ol start="2">
+<li>String 不可变的原因</li>
+</ol>
+<p>String 类被final修饰，防止被继承<br>其中的存储字符串的字符数组也被final修饰，而且修饰符是私有的，防止被重写<br>并且没有对外提供setter方法<br>在Java9之后，String类中存储字符串的字符数组的类型从 char[] 变成了 byte[]，节省了一半的空间，char 两个字节 ，byte 一个字节</p>
+<ol start="3">
+<li>字符串拼接使用 + 还是使用 StringBuilder？</li>
+</ol>
+<p>使用+ 拼接会出现大量的临时对象StringBuilder<br>使用StringBuilder进行拼接就不会</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String[] arr = &#123;<span class="string">&quot;he&quot;</span>, <span class="string">&quot;llo&quot;</span>, <span class="string">&quot;world&quot;</span>&#125;;</span><br><span class="line"><span class="type">StringBuilder</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line"><span class="keyword">for</span> (String value : arr) &#123;</span><br><span class="line">    s.append(value);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(s);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>字符串常量池的作用？</li>
+</ol>
+<p>字符串常量池是JVM为了提升性能和减少内存的使用，专门为String类开辟的一个区域，主要是为了避免字符串的重复创建<br>例子：String name &#x3D; “aaa”；在堆中创建字符串对象 aaa 。然后将字符串对象aaa的引用保存在字符串常量池中 ;<br>String  name2 &#x3D; “aaa”<br>判断name &#x3D;&#x3D; name2  &#x3D;&gt; true<br>原因是因为，Java发现aaa这个字符串对象已经在堆中创建了，为了内存，直接将aaa对象的引用地址赋值给name2引用对象，这样减少了内存的消耗。</p>
+<ol start="5">
+<li>String s1 &#x3D; new String(“abc”);创建了几个字符串对象</li>
+</ol>
+<p>1或2 个字符串对象<br>当字符串常量池中没有“abc”的字符串对象引用 ，new String在堆中创建未初始化的String对象；在堆中再创建“abc”对象<br>当字符串常量池中有 “abc”的字符串对象的引用说明堆中已经有“abc”的字符串对象了，则只有new创建一个String对象</p>
+<ol start="6">
+<li>String类中的intern方法有什么作用？</li>
+</ol>
+<p>intern方法的作用：将指定的字符串引用保存在字符串常量池中<br>a. 当字符串常量池中有该字符串的引用，则直接返回引用地址<br>b. 当字符串常量池中没有该字符串的引用，则会自动创建一个引用指向堆中的字符串对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">例子</span><br><span class="line"><span class="type">String</span> <span class="variable">n1</span> <span class="operator">=</span> <span class="string">&quot;abc&quot;</span>; <span class="comment">// 在堆中创建字符串“abc”对象，并且生成对象引用保存在字符串常量池</span></span><br><span class="line"><span class="type">String</span> <span class="variable">n2</span> <span class="operator">=</span> n1.intern() ; <span class="comment">// 先看常量池中有没有，有再将字符串常量池中的&quot;abc&quot;对象引用地址传递给n2</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">n3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;abc&quot;</span>);<span class="comment">//在堆中创建&quot;abc&quot;的对象</span></span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">n4</span> <span class="operator">=</span> n3.intern(); <span class="comment">// 先看常量池中有没有，字符串常量池中有&quot;abc&quot;的引用(n1)，直接返回给n4</span></span><br><span class="line"></span><br><span class="line">判断：n1 == n2 <span class="literal">true</span></span><br><span class="line">	n3 == n4 <span class="literal">false</span> n3是新建的对象引用，n4仍然是n1的引用</span><br><span class="line">	n4 == n1 <span class="literal">true</span> </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>String类型的变量和常量做 + 运算时发生了什么</li>
+</ol>
+<p>对于编译期可以确定值的字符串，也就是常量字符串 ，jvm 会将其存入字符串常量池。并且，字符串常量拼接得到的字符串常量在编译阶段就已经被存放字符串常量池，这个得益于编译器的优化。<br>其中使用了”常量折叠“的思想：String str &#x3D; “hello”+ “word” &#x3D;&gt; Sting str &#x3D; “helloword”，只有在编译时期，已经有确认值的常量才能有常量折叠的优化<br>引用的值在程序编译期是无法确定的，编译器无法对其进行优化<br>被final修饰的变量作为常量处理，也就是可以在编译期确认变量的值，会触发常量折叠</p>
 
       
 
@@ -247,7 +287,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java Java面试题</a>
         		</li>
       		
 		</ul>
@@ -303,7 +343,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/20/%E7%90%86%E8%A7%A3DTO-VO-DAO-PO-BO/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/01/23/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-3day/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -317,18 +357,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2023/12/22/%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          跨域资源共享CORS
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/09/12/Java%E4%B8%AD%E6%9E%9A%E4%B8%BE%E7%9A%84%E7%94%A8%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java中枚举的用法</div>
+    <a href="/2024/01/23/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-4day/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java基础面试题-4day</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -355,7 +386,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DTO-Data-Transfer-Object-%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text">DTO Data Transfer Object 数据传输对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PO-Persistant-Object-%E6%8C%81%E4%B9%85%E5%B1%82%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.</span> <span class="toc-text">PO Persistant Object 持久层对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VO-Value-Object-%E8%A7%86%E5%9B%BE%E5%AF%B9%E8%B1%A1"><span class="toc-number">3.</span> <span class="toc-text">VO Value Object 视图对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DAO-Data-Access-Object-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1"><span class="toc-number">4.</span> <span class="toc-text">DAO Data Access Object 数据访问对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BO-Business-Object-%E4%B8%9A%E5%8A%A1%E9%80%BB%E8%BE%91%E5%AF%B9%E8%B1%A1"><span class="toc-number">5.</span> <span class="toc-text">BO Business Object 业务逻辑对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E5%89%8D%E7%AB%AF%E5%88%B0%E5%90%8E%E7%AB%AF%EF%BC%8C%E5%86%8D%E5%88%B0%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B"><span class="toc-number">6.</span> <span class="toc-text">从前端到后端，再到数据库的基本过程</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Object"><span class="toc-number">1.</span> <span class="toc-text">Object</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String"><span class="toc-number">2.</span> <span class="toc-text">String</span></a></li></ol>
                     </div>
                 </span>
             </div>
