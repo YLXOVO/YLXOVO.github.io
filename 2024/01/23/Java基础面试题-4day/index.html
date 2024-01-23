@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2023/9 | YLXOVO</title>
+  <title>Java基础面试题-4day | YLXOVO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="YLXOVO">
-<meta property="og:url" content="http://example.com/archives/2023/09/index.html">
+  <meta name="description" content="摘要：Java基础面试题以及个人总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础面试题-4day">
+<meta property="og:url" content="http://example.com/2024/01/23/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-4day/index.html">
 <meta property="og:site_name" content="YLXOVO">
+<meta property="og:description" content="摘要：Java基础面试题以及个人总结">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-01-23T15:16:39.000Z">
+<meta property="article:modified_time" content="2024-01-23T15:17:21.885Z">
 <meta property="article:author" content="YLXOVO">
+<meta property="article:tag" content="Java Java面试题">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="YLXOVO" type="application/atom+xml">
@@ -199,60 +204,186 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java基础面试题-4day" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/12/Java%E4%B8%AD%E6%9E%9A%E4%B8%BE%E7%9A%84%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2023-09-12T13:31:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/12/Java%E4%B8%AD%E6%9E%9A%E4%B8%BE%E7%9A%84%E7%94%A8%E6%B3%95/">Java中枚举的用法</a>
+    <h1 class="article-title" itemprop="name">
+      Java基础面试题-4day
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2024/01/23/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-4day/" class="archive-article-date">
+  	<time datetime="2024-01-23T15:16:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要：Java基础面试题以及个人总结</p>
+<span id="more"></span>
+<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><ol>
+<li>Exception和Error有什么区别？</li>
+</ol>
+<p>Exception类和Error类有一个共同的父类Throwable类<br>Exception类为异常类，可以使用catch 捕获，捕获之后，Exception类又分为Checked Exception和 Uncheckend Exception<br>Checked Exception是捕获后必须进行处理的异常<br>Uncheckend Exception 是捕获后，可以不进行处理的异常<br>Error类是错误类<br>不建议用catch进行捕获，是虚拟机不能处理的错误，一般虚拟机会通过停止进程来终止</p>
+<ol start="2">
+<li>Checked Exception和 Unchecked Exception有什么区别？</li>
+</ol>
+<p>Checked exception 受检查异常，当受检查异常没有使用关键词catch和throw时，程序将不会通过编译<br>RuntimeException成为运行时异常，运行时异常和其子类的异常为Unchecked Exception，为不受检查的异常，异常出现即使不捕获或者抛出也可以正常通过编译<br>除了RuntimeException类及其子类之外的Exception类及其子类都是CheckedException<br>Runtime Exception的子类有：<br>NullPointException 空指针异常<br>IllegalArgumentsException 参数错误异常<br>NumberFormatException 字符串转换为数字格式异常<br>ArrayIndexOutOfExcepion 数组越界异常<br>ClassCastException 类型转换异常<br>ArithmeticException 算术异常<br>SecurityException 安全错误<br>等等</p>
+<ol start="2">
+<li>Throwable类常用方法有哪些？</li>
+</ol>
+<p>String getMessage 返回发生异常时的简要信息<br>String toString 返回发生异常的详细信息<br>String getLocalizedMessage() 返回发生异常时对象的本地化信息，当子类没有覆盖该方法的时候，返回的信息和getMessage()一样<br>void printStackTrace() 在控制台上打印Throwable对象封装的异常信息</p>
+<ol start="3">
+<li>try-catch-finally如何使用</li>
+</ol>
+<p>try 关键字中输入程序，捕获try语句块中的异常<br>catch 处理捕获的异常<br>finally 无论是否捕获或者处理异常，都会执行其中的程序</p>
+<p>当try 语句块中和finall语句块中都使用了return，finally语句中return 的结果将会覆盖try语句中的结果</p>
+<ol start="4">
+<li>finally中的语句一定会被执行吗？</li>
+</ol>
+<p>当在进行finally之前，程序就已经停止的时候<br>程序中的所有线程都死亡的时候<br>cpu关闭的时候</p>
+<ol start="5">
+<li>异常使用有什么需要注意的地方</li>
+</ol>
+<p>异常不能定义成静态变量，否则可能会引起异常栈信息错乱，每次抛出异常都是抛出new出的异常对象<br>抛出的异常要有意义<br>使用日志打印异常之后，就不要使用抛出异常</p>
+<p>6. </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java Java面试题</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/01/23/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-4day/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2024/01/19/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-2day/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java基础面试题-2day</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8"><span class="toc-number">1.</span> <span class="toc-text">异常</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -273,8 +404,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
