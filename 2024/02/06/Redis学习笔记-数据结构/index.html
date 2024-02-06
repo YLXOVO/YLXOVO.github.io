@@ -6,15 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | YLXOVO</title>
+  <title>Redis学习笔记-数据结构 | YLXOVO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="YLXOVO">
-<meta property="og:url" content="http://example.com/archives/page/2/index.html">
+  <meta name="description" content="摘要：Redis 学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis学习笔记-数据结构">
+<meta property="og:url" content="http://example.com/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="YLXOVO">
+<meta property="og:description" content="摘要：Redis 学习笔记">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-27-37.png">
+<meta property="og:image" content="http://example.com/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-30-37.png">
+<meta property="og:image" content="http://example.com/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-32-05.png">
+<meta property="og:image" content="http://example.com/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-32-46.png">
+<meta property="og:image" content="http://example.com/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-33-38.png">
+<meta property="og:image" content="http://example.com/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-34-49.png">
+<meta property="og:image" content="http://example.com/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-35-40.png">
+<meta property="og:image" content="http://example.com/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-36-26.png">
+<meta property="og:image" content="http://example.com/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-37-16.png">
+<meta property="article:published_time" content="2024-02-06T09:25:30.000Z">
+<meta property="article:modified_time" content="2024-02-06T09:37:49.946Z">
 <meta property="article:author" content="YLXOVO">
+<meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-27-37.png">
   
     <link rel="alternative" href="/atom.xml" title="YLXOVO" type="application/atom+xml">
   
@@ -199,367 +214,262 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Redis学习笔记-数据结构" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Redis学习笔记-数据结构
+    </h1>
+  
+
+        
+        <a href="/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="archive-article-date">
+  	<time datetime="2024-02-06T09:25:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-02-06</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要：Redis 学习笔记</p>
+<span id="more"></span>
+<h1 id="Redis-快速入门"><a href="#Redis-快速入门" class="headerlink" title="Redis 快速入门"></a>Redis 快速入门</h1><p>Redis属于非关系型数据库<br>SQL应用场景</p>
+<ol>
+<li>数据结构固定</li>
+<li>相关业务对数据安全性一致性要求高</li>
+</ol>
+<p>NoSQL应用场景</p>
+<ol>
+<li>数据结构不固定</li>
+<li>对一致性，安全性要求不高</li>
+<li>性能要求高</li>
+</ol>
+<p>🎯需要使用Xftp 传输压缩包到虚拟机上</p>
+<p>安装好Redis后，<br>执行命令redis-server选择一个特定的执行目录，日志、持久化文件等都会保存在这个目录里面</p>
+<p>将redis在后台运行<br>修改redis配置文件 redis.conf<br>（在正常模式输入 &#x2F;想要查找的配置）</p>
+<blockquote>
+<p>监听地址：bind 0.0.0.0<br>守护进程：daemonize yes<br>密码：设置后访问Redis必须输入密码<br>requirepass：123321</p>
+</blockquote>
+<p>其他的配置</p>
+<blockquote>
+<p>数据库数量默认有16个库，编号是0-15<br>database：1  代表只使用一个库</p>
+<p>设置Redis能够使用的最大内存<br>maxmemory 512mb</p>
+<p>日志文件，默认为空，不记录日志，可以指定日志文件名<br>logfile “redis.log”</p>
+</blockquote>
+<p>在安装目录下，执行<br>redis-server redis.conf</p>
+<p>查看是否启动成功<br>ps -ef | gref redis</p>
+<p>杀死进程<br>kill -9 进程号</p>
+<p>为了开启redis方便<br>开机自启<br>创建一个新文件</p>
+<blockquote>
+<p>vi &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;redis.service</p>
+</blockquote>
+<p>添加内容：<br><img src="/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-27-37.png" alt="image.png"><br>内容如下：<br>[unit]<br>Description&#x3D;redis-server<br>After&#x3D;network.target</p>
+<p>[Service]<br>Type&#x3D;forking<br>ExecStart&#x3D;&#x2F;usr&#x2F;local&#x2F;bin&#x2F;redis-server &#x2F;usr&#x2F;local&#x2F;src&#x2F;redis-7.2.4&#x2F;redis.conf<br>PrivateTmp&#x3D;true</p>
+<p>[Install]<br>WantedBy&#x3D;multi-user.target</p>
+<p>重载系统服务：</p>
+<blockquote>
+<p>systemctl daemon-reload<br>此时redis正在被我们的系统管理</p>
+</blockquote>
+<p>启动redis：</p>
+<blockquote>
+<p>systemctl start redis</p>
+</blockquote>
+<p>查看状态：</p>
+<blockquote>
+<p>systemctl status redis</p>
+</blockquote>
+<p>停止redis：</p>
+<blockquote>
+<p>systemctl stop redis</p>
+</blockquote>
+<p>重启redis：</p>
+<blockquote>
+<p>systemctl restart redis</p>
+</blockquote>
+<p>启动开机自启：</p>
+<blockquote>
+<p>systemctl enable redis</p>
+</blockquote>
+<h2 id="redis客户端"><a href="#redis客户端" class="headerlink" title="redis客户端"></a>redis客户端</h2><p>位置 &#x2F;usr&#x2F;local&#x2F;bin<br>redis命令行客户端<br>在我们安装redis 的时候已经安装了 redis-cli<br>启动：</p>
+<blockquote>
+<p>redis-cli [option] [commonds]</p>
+</blockquote>
+<p>常见的option</p>
+<ol>
+<li>-h redis连接的IP地址 127.0.0.1 不输入默认是本机地址</li>
+<li>-p 6379 ：指定端口，不输入默认是6379</li>
+<li>-a 123321 ： 指定密码</li>
+</ol>
+<p>进入客户端不输入密码<br>使用命令输入密码</p>
+<blockquote>
+<p>AUTH 123321</p>
+</blockquote>
+<p>连接成功<br>输入ping 响应PONG 表示连接成功</p>
+<p>默认使用的库是db0<br>可以简单的设置<br>set name john<br>set age 21<br>get name<br>get age</p>
+<p>切换库 ：select 库序号（0-15）</p>
+<h1 id="redis常见命令"><a href="#redis常见命令" class="headerlink" title="redis常见命令"></a>redis常见命令</h1><p>基本类型：<br>String<br>Hash<br>List<br>Set<br>SortedSet<br>特殊类型：后面讲<br>GEO<br>BitMap<br>Hyperlog</p>
+<p>官方文档： <a target="_blank" rel="noopener" href="https://redis.io/">https://redis.io/</a><br><img src="/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-30-37.png" alt="image.png"><br>命令行方式查看通用命令文档<br>进入redis命令行客户端<br>help @generic</p>
+<h2 id="通用命令"><a href="#通用命令" class="headerlink" title="通用命令"></a>通用命令</h2><p>常见命令 当个命令的使用范围是在一个库里面<br>KEYS 查看符合模板的所有key；不能在生产环境下使用，底层使用模糊查询，会导致redis阻塞<br>DEL 删除一个指定的key，可以一起删除多个key，删除成功返回对应删除的个数<br>EXISTS 判断key是否存在，可以批量查看；存在返回值大于0，不存在返回0<br>EXPIRE 给对应key添加过期时间，单位是秒<br>TTL 查看对应的key剩余的存在时间，返回值为-2表示已经不存在，返回值为大于0，表示仍然存在大于0秒的时间<br><img src="/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-32-05.png" alt="image.png"><br><img src="/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-32-46.png" alt="image.png"><br>当我们没有给键 设置过期时间，这个键就是永久的，使用ttl查看返回-1，表示的就是永久</p>
+<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>由于我的虚拟机不是使用超级管理员root登录的，而是自己创建的账号redis<br><strong>进入超级管理员的命令是 su - 并且输入密码即可</strong></p>
+<p>全部可以通过帮助文档找到 help @string</p>
+<h2 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h2><p>string 类型的数据结构底层都是 字节数组<br>字符串类型的最大空间不能超过512m</p>
+<p>string类型中，为了存储空间的容量，格式还分为string，integer，float<br>string是正常的字符串类型<br>integer和float是数值类型，数值类型有自增自减的功能</p>
+<p>string类型的常用的命令：</p>
+<ol>
+<li>set：如果key存在，则是修改的功能</li>
+<li>get：获取</li>
+<li>mset：批量添加或者修改 k1 v1 k2 v2 </li>
+<li>mget：批量获取</li>
+<li>incr：数值类型比如int,让一个整型key 自增1</li>
+<li>incrby：数值类型让一个整型的key 指定自增的值；实现自减，指定的值为负数即可</li>
+<li>incrbyfloat：浮点类型的数据进行 自增的操作，每次定义自增的步长</li>
+<li>setnx：相比于set不存在相同的数据，真正表示新增，如果key存在，不生效</li>
+<li>setex：新增并且添加有效期 参数：key seconds value</li>
+</ol>
+<p>redis 操作的都是对key 进行操作，进而影响到value </p>
+<h2 id="key的层级格式"><a href="#key的层级格式" class="headerlink" title="key的层级格式"></a>key的层级格式</h2><p>⭐问题：redis没有mysql表的概念，所有当我们进行不能数据的存储的时候，可能会出现冲突，比如id冲突<br>解决的方法<br>在redis中，key可以进行层级的命名 []:[]:[]<br>比如 公司：组名：键；或者是 【项目名】：【业务名】：【类型】：【id】<br>就可以实现分层次，不会产生冲突<br><img src="/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-33-38.png" alt="image.png"><br>key<br>user:name:1<br>value<br>{<br>“name”:”ylx”,<br>“age”:”21”<br>}<br>value 对于Java对象来说，可以将对象json化之后，就可以存储到redis中<br><img src="/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-34-49.png" alt="image.png"></p>
+<h2 id="hash类型"><a href="#hash类型" class="headerlink" title="hash类型"></a>hash类型</h2><p>优点：对比string 如果values要进行修改，可以单独对value中其中一个field进行修改，而string没有办法进行对value中的值进行当个修改，更加灵活。<br>常见命令<br><img src="/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-35-40.png" alt="image.png"><br>hset 和 hmset 用法一致<br><img src="/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-36-26.png" alt="image.png"></p>
+<p><img src="/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/assets/Snipaste_2024-02-06_17-37-16.png" alt="image.png"><br>总结：</p>
+<ol>
+<li>hset 命令和hmset 命令一样，可以为单个Key 批量添加多个 field和value</li>
+<li>hget 命令和 hmget命令则不是一样的，hget只能获取到一个字段，hmget可以批量获得</li>
+<li>hgetall 获取field和value；hkeys 获取field； hvals 获取value</li>
+<li>hsetnx 添加一个key 的 field字段，前提是这个field字段不存在，否则添加不成功</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/12/20/%E7%90%86%E8%A7%A3DTO-VO-DAO-PO-BO/" class="archive-article-date">
-  	<time datetime="2023-12-20T02:51:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/12/20/%E7%90%86%E8%A7%A3DTO-VO-DAO-PO-BO/">理解DTO,VO,DAO,PO,BO</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/12/Java%E4%B8%AD%E6%9E%9A%E4%B8%BE%E7%9A%84%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2023-09-12T13:31:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-12</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2024/02/04/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-7day/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java基础面试题-7day</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/12/Java%E4%B8%AD%E6%9E%9A%E4%B8%BE%E7%9A%84%E7%94%A8%E6%B3%95/">Java中枚举的用法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">Redis 快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#redis%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-number">1.1.</span> <span class="toc-text">redis客户端</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#redis%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">redis常见命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">2.1.</span> <span class="toc-text">通用命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">3.</span> <span class="toc-text">数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#String%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.1.</span> <span class="toc-text">String类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#key%E7%9A%84%E5%B1%82%E7%BA%A7%E6%A0%BC%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">key的层级格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hash%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.3.</span> <span class="toc-text">hash类型</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/22/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-4-1%EF%BC%8C4-2/" class="archive-article-date">
-  	<time datetime="2023-07-22T15:14:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-22</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/22/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-4-1%EF%BC%8C4-2/">第四章-实用开发篇-4-1，4-2</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2023-07-21T12:58:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/">第三章-实用开发篇-3-2高级配置</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-1%E7%83%AD%E9%83%A8%E7%BD%B2/" class="archive-article-date">
-  	<time datetime="2023-07-21T00:44:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-1%E7%83%AD%E9%83%A8%E7%BD%B2/">第三章-实用开发篇-3.1热部署</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/20/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-4%E6%97%A5%E5%BF%97/" class="archive-article-date">
-  	<time datetime="2023-07-20T11:09:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/20/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-4%E6%97%A5%E5%BF%97/">第二章-运维篇-2.4日志</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/17/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-3%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2023-07-17T01:45:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/17/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-3%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91/">第二章-运维篇-2.3多环境开发</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/16/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87/" class="archive-article-date">
-  	<time datetime="2023-07-16T03:41:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/16/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87/">第二章 运维篇</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/11/springboot-1-3%E6%95%B4%E5%90%88%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/" class="archive-article-date">
-  	<time datetime="2023-07-11T05:13:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/11/springboot-1-3%E6%95%B4%E5%90%88%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/">springboot---1.3整合第三方技术</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -581,8 +491,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
