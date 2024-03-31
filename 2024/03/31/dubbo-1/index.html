@@ -19,15 +19,15 @@
 <meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331100709623.png">
 <meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331110143155.png">
 <meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331112457359.png">
-<meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331112514756.png">
 <meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331112804108.png">
 <meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331112949872.png">
 <meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331181817256.png">
 <meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331182449537.png">
 <meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331183849430.png">
 <meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331184613081.png">
+<meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331190958240.png">
 <meta property="article:published_time" content="2024-03-31T11:30:57.000Z">
-<meta property="article:modified_time" content="2024-03-31T11:44:41.042Z">
+<meta property="article:modified_time" content="2024-03-31T11:51:00.932Z">
 <meta property="article:author" content="YLXOVO">
 <meta property="article:tag" content="Dubbo">
 <meta name="twitter:card" content="summary">
@@ -272,10 +272,10 @@
 <p><img src="/2024/03/31/dubbo-1/assets/image-20240331112457359.png" alt="image-20240331112514756"></p>
 <p>interface写的是公共接口中的接口</p>
 <p>ref写真正实现的服务的对现象</p>
-<p>​	将真正的实现类交给容器管理<img src="/2024/03/31/dubbo-1/assets/image-20240331112514756.png" alt="image-20240331112804108"></p>
+<p>​	将真正的实现类交给容器管理<img src="/2024/03/31/dubbo-1/assets/image-20240331112804108.png" alt="image-20240331112804108"></p>
 </li>
 <li><p>加载Spring的配置</p>
-<p><img src="/2024/03/31/dubbo-1/assets/image-20240331112804108.png" alt="image-20240331112949872"></p>
+<p><img src="/2024/03/31/dubbo-1/assets/image-20240331112949872.png" alt="image-20240331112949872"></p>
 </li>
 </ol>
 <h2 id="配置服务消费者"><a href="#配置服务消费者" class="headerlink" title="配置服务消费者"></a>配置服务消费者</h2><ol>
@@ -312,7 +312,7 @@
 <p>进入assembly.bin</p>
 <p>双击start.bat 启动</p>
 <p>浏览器上访问localhost:8080端口</p>
-<p><img src="/2024/03/31/dubbo-1/assets/image-20240331112949872.png" alt="image-20240331181817256"></p>
+<p><img src="/2024/03/31/dubbo-1/assets/image-20240331181817256.png" alt="image-20240331181817256"></p>
 <p>监控中心监控服务</p>
 <p>在消费者和提供者的配置文件中，添加配置</p>
 <p><code>&lt;dubbo:monitor protocol=&quot;registry&quot;&gt;&lt;/dubbo:monitor&gt;</code>自动发现监控中心</p>
@@ -320,7 +320,7 @@
 <p><code>&lt;dubbo:monitor address=&quot;127.0.0.1:7070&quot;&gt;&lt;/dubbo:monitor&gt;</code></p>
 <p>分别启动消费者和提供者的启动类</p>
 <p>再一次进入网址刷新</p>
-<p><img src="/2024/03/31/dubbo-1/assets/image-20240331181817256.png" alt="image-20240331182449537"></p>
+<p><img src="/2024/03/31/dubbo-1/assets/image-20240331182449537.png" alt="image-20240331182449537"></p>
 <h1 id="dubbo-——-2day"><a href="#dubbo-——-2day" class="headerlink" title="dubbo —— 2day"></a>dubbo —— 2day</h1><h2 id="⭐SpringBoot-结合-dubbo"><a href="#⭐SpringBoot-结合-dubbo" class="headerlink" title="⭐SpringBoot 结合 dubbo"></a>⭐SpringBoot 结合 dubbo</h2><h3 id="服务提供者"><a href="#服务提供者" class="headerlink" title="服务提供者"></a>服务提供者</h3><p>创建spring boot项目</p>
 <p>服务提供者导入dubbo-spring-boot-starter</p>
 <blockquote>
@@ -330,7 +330,7 @@
 <p>创建配置文件</p>
 <p>内容根据spring的配置方法相对应的配置</p>
 <p>基础配置</p>
-<p><img src="/2024/03/31/dubbo-1/assets/image-20240331182449537.png" alt="image-20240331183849430"></p>
+<p><img src="/2024/03/31/dubbo-1/assets/image-20240331183849430.png" alt="image-20240331183849430"></p>
 <p>随着项目的增大，要暴露的服务越来越多</p>
 <p>在实现类的开头添加注解 <strong>@Service 这是dubbo提供的注解</strong></p>
 <blockquote>
@@ -349,7 +349,7 @@
 <li><p>导入dubbo-spring-boot-starter依赖</p>
 </li>
 <li><p>服务消费者的application.properties文件中配置基本的名称，注册中心的地址，通信协议</p>
-<p><img src="/2024/03/31/dubbo-1/assets/image-20240331183849430.png" alt="image-20240331184613081"></p>
+<p><img src="/2024/03/31/dubbo-1/assets/image-20240331184613081.png" alt="image-20240331184613081"></p>
 </li>
 <li><p>在消费者的实现类中，将之前通过自动注入提供者的服务接口注解改为 <strong>@Reference</strong><br>远程的调用注册中心的服务提供者暴露的接口</p>
 <blockquote>
@@ -366,7 +366,7 @@
 </blockquote>
 </li>
 <li><p>创建controller </p>
-<p><img src="/2024/03/31/dubbo-1/assets/image-20240331184613081.png" alt="image-20240331190958240"></p>
+<p><img src="/2024/03/31/dubbo-1/assets/image-20240331190958240.png" alt="image-20240331190958240"></p>
 </li>
 <li><p>在服务的消费者的启动类中，添加启动dubbo的注解 @EnableDubbo 注解 </p>
 </li>
