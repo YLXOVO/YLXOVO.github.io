@@ -6,15 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2023 | YLXOVO</title>
+  <title>dubbo-1 | YLXOVO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="YLXOVO">
-<meta property="og:url" content="http://example.com/archives/2023/index.html">
+  <meta name="description" content="摘要：Spring 结合 Dubbo，SpringBoot 结合 Dubbo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dubbo-1">
+<meta property="og:url" content="http://example.com/2024/03/31/dubbo-1/index.html">
 <meta property="og:site_name" content="YLXOVO">
+<meta property="og:description" content="摘要：Spring 结合 Dubbo，SpringBoot 结合 Dubbo">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240330160608821.png">
+<meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331100709623.png">
+<meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331110143155.png">
+<meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331112457359.png">
+<meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331112514756.png">
+<meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331112804108.png">
+<meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331112949872.png">
+<meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331181817256.png">
+<meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331182449537.png">
+<meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331183849430.png">
+<meta property="og:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240331184613081.png">
+<meta property="article:published_time" content="2024-03-31T11:30:57.000Z">
+<meta property="article:modified_time" content="2024-03-31T11:44:41.042Z">
 <meta property="article:author" content="YLXOVO">
+<meta property="article:tag" content="Dubbo">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/03/31/dubbo-1/assets/image-20240330160608821.png">
   
     <link rel="alternative" href="/atom.xml" title="YLXOVO" type="application/atom+xml">
   
@@ -199,405 +216,324 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-dubbo-1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      dubbo-1
+    </h1>
+  
+
+        
+        <a href="/2024/03/31/dubbo-1/" class="archive-article-date">
+  	<time datetime="2024-03-31T11:30:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-03-31</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要：Spring 结合 Dubbo，SpringBoot 结合 Dubbo</p>
+<span id="more"></span>
+<h1 id="dubbo-——-one-day"><a href="#dubbo-——-one-day" class="headerlink" title="dubbo —— one day"></a>dubbo —— one day</h1><p>dubbo官方网站：<a target="_blank" rel="noopener" href="https://cn.dubbo.apache.org/zh-cn/">Apache Dubbo</a></p>
+<p>Java微服务快速开始文档：<a target="_blank" rel="noopener" href="https://cn.dubbo.apache.org/zh-cn/overview/quickstart/">Dubbo 入门 | Apache Dubbo</a></p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><ol>
+<li>搭建注册中心 zookeeper</li>
+<li>搭建管理控制台</li>
+</ol>
+<h3 id="搭建zookeeper"><a href="#搭建zookeeper" class="headerlink" title="搭建zookeeper"></a>搭建zookeeper</h3><p>官网下载zookeeper，安装</p>
+<p>在bin目录下的命令提示符下运行 zkServer.cmd</p>
+<p><img src="/2024/03/31/dubbo-1/assets/image-20240330160608821.png" alt="image-20240330160608821"></p>
+<p>修改 环境变量 jdk的值，编辑变量，将最后的分号删除即可</p>
+<ol start="2">
+<li>修改zookeeper配置文件，&#x2F;conf&#x2F;zoo-sample.conf修改为zoo.conf，编辑该文件，datadir&#x3D;当前的安装目录下的新建的文件夹data</li>
+<li>启动zkserver<br><img src="/2024/03/31/dubbo-1/assets/image-20240331100709623.png" alt="image-20240331100709623"></li>
+</ol>
+<h2 id="安装监控中心"><a href="#安装监控中心" class="headerlink" title="安装监控中心"></a>安装监控中心</h2><p>进入dubboGitHub仓库</p>
+<p>找到管理员控制台<a target="_blank" rel="noopener" href="https://github.com/apache/dubbo-admin">apache&#x2F;dubbo-admin: The ops and reference implementation for Apache Dubbo (github.com)</a></p>
+<ol>
+<li>下载压缩包，解压</li>
+<li>找到 dubbo-admin，检查项目中的配置文件，properties.xml中的zookeeper地址是否正确，127.0.0.1:2181</li>
+<li>在dubbo-admin的安装目录下，执行cmd ,执行 mvn clean package</li>
+</ol>
+<h2 id="创建服务提供者、服务消费者和公共接口"><a href="#创建服务提供者、服务消费者和公共接口" class="headerlink" title="创建服务提供者、服务消费者和公共接口"></a>创建服务提供者、服务消费者和公共接口</h2><p><img src="/2024/03/31/dubbo-1/assets/image-20240331110143155.png" alt="image-20240331110143155"></p>
+<p>公共接口存放服务的接口和服务的模型、异常等</p>
+<p>服务提供者和服务消费者存放对应接口的实现类，各自POM文件中引入公共接口的依赖</p>
+<p>此时服务消费者仍然不能直接调用服务提供者的服务接口</p>
+<h2 id="将服务提供者注册到注册中心zookeeper"><a href="#将服务提供者注册到注册中心zookeeper" class="headerlink" title="将服务提供者注册到注册中心zookeeper"></a>将服务提供者注册到注册中心zookeeper</h2><ol>
+<li><p>服务提供者引入Dubbo依赖</p>
+</li>
+<li><p>引入搭建的注册中心的客户端（zookeeper，nacos）对应的依赖</p>
+</li>
+<li><p>创建配置文件<br>添加dubbo的命名空间，可以有提示</p>
+<p><img src="/2024/03/31/dubbo-1/assets/image-20240331112457359.png" alt="image-20240331112514756"></p>
+<p>interface写的是公共接口中的接口</p>
+<p>ref写真正实现的服务的对现象</p>
+<p>​	将真正的实现类交给容器管理<img src="/2024/03/31/dubbo-1/assets/image-20240331112514756.png" alt="image-20240331112804108"></p>
+</li>
+<li><p>加载Spring的配置</p>
+<p><img src="/2024/03/31/dubbo-1/assets/image-20240331112804108.png" alt="image-20240331112949872"></p>
+</li>
+</ol>
+<h2 id="配置服务消费者"><a href="#配置服务消费者" class="headerlink" title="配置服务消费者"></a>配置服务消费者</h2><ol>
+<li><p>引入dubbo依赖</p>
+</li>
+<li><p>创建spring配置文件</p>
+</li>
+<li><p>配置注册中心的远程地址</p>
+<p><code>&lt;dubbo:application name=&quot;order-service-consumer&quot;&gt;&lt;/dubbo:application&gt;</code></p>
+<p><code>&lt;dubbo:registry address=&quot;zookeeper://127.0.0.1:2181&quot;&gt;&lt;/dubbo:registry</code></p>
+</li>
+<li><p>声明需要调用的远程服务的接口；生成远程服务代理</p>
+</li>
+</ol>
+<p>​		引用服务提供者暴露的接口</p>
+<p>​		<code>&lt;dubbo:reference interface=&quot;服务提供者暴露给注册中心的接口&quot; id=&quot;userService&quot;&gt;&lt;/dubbo:reference&gt;</code></p>
+<ol start="5">
+<li><p>服务消费者调用注入容器的bean</p>
+</li>
+<li><p>添加spring启动类，根据类路径加载spring配置文件，创建容器<br>ClassPathXmlApplicationContext applicationContext &#x3D; new ClassPathXmlApplicationContext(“配置文件.xml”)</p>
+<p>OrderService orderService &#x3D; applicationContext.getBean(OrderService.class);</p>
+<p>orderService.initOrder(“1”);</p>
+<p>System.in.read();</p>
+</li>
+</ol>
+<h2 id="安装dubbo监控中心"><a href="#安装dubbo监控中心" class="headerlink" title="安装dubbo监控中心"></a>安装dubbo监控中心</h2><p>dubbo-monitor-simple</p>
+<p>进入根目录，使用mvn clean package打包监控中心</p>
+<p>打包成功之后，target目录下有一个打包好的jar包，和一个压缩的jar包</p>
+<p>将压缩的jar包解压出来</p>
+<p>检查修改其中的配置文件中的注册中心的地址是不是与我们的注册中心地址一致</p>
+<p>记录我们监控中心的端口号jetty.port&#x3D;8080web端口</p>
+<p>protocol.port&#x3D;7070 这是进行通信的接口</p>
+<p>启动</p>
+<p>进入assembly.bin</p>
+<p>双击start.bat 启动</p>
+<p>浏览器上访问localhost:8080端口</p>
+<p><img src="/2024/03/31/dubbo-1/assets/image-20240331112949872.png" alt="image-20240331181817256"></p>
+<p>监控中心监控服务</p>
+<p>在消费者和提供者的配置文件中，添加配置</p>
+<p><code>&lt;dubbo:monitor protocol=&quot;registry&quot;&gt;&lt;/dubbo:monitor&gt;</code>自动发现监控中心</p>
+<p>直连</p>
+<p><code>&lt;dubbo:monitor address=&quot;127.0.0.1:7070&quot;&gt;&lt;/dubbo:monitor&gt;</code></p>
+<p>分别启动消费者和提供者的启动类</p>
+<p>再一次进入网址刷新</p>
+<p><img src="/2024/03/31/dubbo-1/assets/image-20240331181817256.png" alt="image-20240331182449537"></p>
+<h1 id="dubbo-——-2day"><a href="#dubbo-——-2day" class="headerlink" title="dubbo —— 2day"></a>dubbo —— 2day</h1><h2 id="⭐SpringBoot-结合-dubbo"><a href="#⭐SpringBoot-结合-dubbo" class="headerlink" title="⭐SpringBoot 结合 dubbo"></a>⭐SpringBoot 结合 dubbo</h2><h3 id="服务提供者"><a href="#服务提供者" class="headerlink" title="服务提供者"></a>服务提供者</h3><p>创建spring boot项目</p>
+<p>服务提供者导入dubbo-spring-boot-starter</p>
+<blockquote>
+<p>根据springboot的版本选择dubbo-starter的版本，大于2.0选择dubbo-starter0.2.0版本</p>
+</blockquote>
+<p>导入dubbo的其他依赖</p>
+<p>创建配置文件</p>
+<p>内容根据spring的配置方法相对应的配置</p>
+<p>基础配置</p>
+<p><img src="/2024/03/31/dubbo-1/assets/image-20240331182449537.png" alt="image-20240331183849430"></p>
+<p>随着项目的增大，要暴露的服务越来越多</p>
+<p>在实现类的开头添加注解 <strong>@Service 这是dubbo提供的注解</strong></p>
+<blockquote>
+<p>spring</p>
+<p>服务提供者暴露服务需要两步</p>
+<ol>
+<li>在spring配置文件中添加标签<code>&lt;dubbo:service interface= ref= &gt;&lt;/dubbo:service&gt;</code>,interface填暴露的服务接口，来自公共接口；ref指向真正的服务提供者的对应的实现类</li>
+<li>使用bean标签，将服务接口UserService接口实现类UserServiceImpl注入到容器中，</li>
+</ol>
+</blockquote>
+<p>要与spring提供的@Service 区分开（可以使用@Component ）</p>
+<p>此时就暴露服务，相比使用配置文件的方式方便了许多</p>
+<p>在启动类上添加<strong>Springboot的基于注解的dubbo功能的注解 @EnableDubbo</strong></p>
+<h3 id="服务消费者"><a href="#服务消费者" class="headerlink" title="服务消费者"></a>服务消费者</h3><p>创建spring boot web 项目</p>
+<ol>
+<li><p>导入dubbo-spring-boot-starter依赖</p>
+</li>
+<li><p>服务消费者的application.properties文件中配置基本的名称，注册中心的地址，通信协议</p>
+<p><img src="/2024/03/31/dubbo-1/assets/image-20240331183849430.png" alt="image-20240331184613081"></p>
+</li>
+<li><p>在消费者的实现类中，将之前通过自动注入提供者的服务接口注解改为 <strong>@Reference</strong><br>远程的调用注册中心的服务提供者暴露的接口</p>
+<blockquote>
+<p>spring</p>
+<p>消费者引入暴露的接口需要两步</p>
+<ol>
+<li><p>配置文件中添加<code>&lt;dubbo:reference&gt;&lt;/dubbo:reference&gt;</code>标签，引用服务提供者暴露的接口</p>
+</li>
+<li><p>在消费者的实现类中添加注入服务提供者的bean</p>
+<p>@Bean</p>
+<p>private UserService userService;</p>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p>创建controller </p>
+<p><img src="/2024/03/31/dubbo-1/assets/image-20240331184613081.png" alt="image-20240331190958240"></p>
+</li>
+<li><p>在服务的消费者的启动类中，添加启动dubbo的注解 @EnableDubbo 注解 </p>
+</li>
+<li><p>由于springboot web项目 默认使用的是tomcat服务器，端口默认是8080；与我们的监控中心的jetty端口冲突；修改端口号为808</p>
+</li>
+<li><p>启动</p>
+</li>
+</ol>
+<h2 id="❗关键三步"><a href="#❗关键三步" class="headerlink" title="❗关键三步"></a>❗关键三步</h2><ol>
+<li><p>pom文件中添加dubbo-spring-boot-starter依赖</p>
+</li>
+<li><p>在配置文件中，添加服务提供者或者消费者需要的配置</p>
+<ol>
+<li><p>提供者</p>
+<blockquote>
+<p>dubbo.application.name</p>
+<p>dubbo.registry.address</p>
+<p>&#x2F;&#x2F; 通信协议</p>
+<p>dubbo.protocol.name&#x3D;dubbo &#x2F;&#x2F; 通信协议端口名</p>
+<p>dubbo.protocol.port&#x3D;20880 &#x2F;&#x2F; 通信协议端口</p>
+<p>&#x2F;&#x2F; 监控中心，自动发现</p>
+<p>dubbo.monitor.protocol&#x3D;registry</p>
+</blockquote>
+</li>
+<li><p>消费者</p>
+<blockquote>
+<p>dubbo.application.name</p>
+<p>dubbo.registry.address</p>
+<p>dubbo.monitor.protocol</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>提供者暴露服务直接在服务接口实现类中添加注解 @Service (dubbo)即可；消费者引用服务，在消费者实现类中，原本通过@Bean注入方式调用服务的方法改为 @Reference</p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/12/25/%E5%85%B3%E4%BA%8EMybatisPlus%E8%87%AA%E5%8A%A8%E8%BD%AC%E5%8C%96%E9%A9%BC%E5%B3%B0%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99%E9%85%8D%E7%BD%AEmapUnderscoreToCamelCase%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%B5%8B%E8%AF%95%E5%92%8C%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2023-12-25T04:58:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/12/25/%E5%85%B3%E4%BA%8EMybatisPlus%E8%87%AA%E5%8A%A8%E8%BD%AC%E5%8C%96%E9%A9%BC%E5%B3%B0%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99%E9%85%8D%E7%BD%AEmapUnderscoreToCamelCase%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%B5%8B%E8%AF%95%E5%92%8C%E6%80%BB%E7%BB%93/">关于MybatisPlus自动转化驼峰命名规则配置mapUnderscoreToCamelCase的个人测试和总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MybatisPlus</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Dubbo</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/03/31/dubbo-1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/12/22/%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/" class="archive-article-date">
-  	<time datetime="2023-12-22T07:41:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2024/02/06/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Redis学习笔记-数据结构</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/12/22/%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%ABCORS/">跨域资源共享CORS</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#dubbo-%E2%80%94%E2%80%94-one-day"><span class="toc-number">1.</span> <span class="toc-text">dubbo —— one day</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">1.1.</span> <span class="toc-text">环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BAzookeeper"><span class="toc-number">1.1.1.</span> <span class="toc-text">搭建zookeeper</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%9B%91%E6%8E%A7%E4%B8%AD%E5%BF%83"><span class="toc-number">1.2.</span> <span class="toc-text">安装监控中心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85%E3%80%81%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85%E5%92%8C%E5%85%AC%E5%85%B1%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.3.</span> <span class="toc-text">创建服务提供者、服务消费者和公共接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85%E6%B3%A8%E5%86%8C%E5%88%B0%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83zookeeper"><span class="toc-number">1.4.</span> <span class="toc-text">将服务提供者注册到注册中心zookeeper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85"><span class="toc-number">1.5.</span> <span class="toc-text">配置服务消费者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85dubbo%E7%9B%91%E6%8E%A7%E4%B8%AD%E5%BF%83"><span class="toc-number">1.6.</span> <span class="toc-text">安装dubbo监控中心</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#dubbo-%E2%80%94%E2%80%94-2day"><span class="toc-number">2.</span> <span class="toc-text">dubbo —— 2day</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%AD%90SpringBoot-%E7%BB%93%E5%90%88-dubbo"><span class="toc-number">2.1.</span> <span class="toc-text">⭐SpringBoot 结合 dubbo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85"><span class="toc-number">2.1.1.</span> <span class="toc-text">服务提供者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E6%B6%88%E8%B4%B9%E8%80%85"><span class="toc-number">2.1.2.</span> <span class="toc-text">服务消费者</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9D%97%E5%85%B3%E9%94%AE%E4%B8%89%E6%AD%A5"><span class="toc-number">2.2.</span> <span class="toc-text">❗关键三步</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/12/20/%E7%90%86%E8%A7%A3DTO-VO-DAO-PO-BO/" class="archive-article-date">
-  	<time datetime="2023-12-20T02:51:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-20</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/12/20/%E7%90%86%E8%A7%A3DTO-VO-DAO-PO-BO/">理解DTO,VO,DAO,PO,BO</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">计算机</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/09/12/Java%E4%B8%AD%E6%9E%9A%E4%B8%BE%E7%9A%84%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2023-09-12T13:31:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/09/12/Java%E4%B8%AD%E6%9E%9A%E4%B8%BE%E7%9A%84%E7%94%A8%E6%B3%95/">Java中枚举的用法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/22/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-4-1%EF%BC%8C4-2/" class="archive-article-date">
-  	<time datetime="2023-07-22T15:14:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/22/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-4-1%EF%BC%8C4-2/">第四章-实用开发篇-4-1，4-2</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2023-07-21T12:58:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-2%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE/">第三章-实用开发篇-3-2高级配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-1%E7%83%AD%E9%83%A8%E7%BD%B2/" class="archive-article-date">
-  	<time datetime="2023-07-21T00:44:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/21/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AE%9E%E7%94%A8%E5%BC%80%E5%8F%91%E7%AF%87-3-1%E7%83%AD%E9%83%A8%E7%BD%B2/">第三章-实用开发篇-3.1热部署</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/20/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-4%E6%97%A5%E5%BF%97/" class="archive-article-date">
-  	<time datetime="2023-07-20T11:09:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/20/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-4%E6%97%A5%E5%BF%97/">第二章-运维篇-2.4日志</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/17/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-3%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2023-07-17T01:45:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/17/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87-2-3%E5%A4%9A%E7%8E%AF%E5%A2%83%E5%BC%80%E5%8F%91/">第二章-运维篇-2.3多环境开发</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/07/16/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87/" class="archive-article-date">
-  	<time datetime="2023-07-16T03:41:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/07/16/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%90%E7%BB%B4%E7%AF%87/">第二章 运维篇</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2023/page/2/">2</a><a class="extend next" rel="next" href="/archives/2023/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -619,8 +555,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
