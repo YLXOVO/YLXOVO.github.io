@@ -6,19 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Java基础面试题-5day | YLXOVO</title>
+  <title>Archives: 2024/6 | YLXOVO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="摘要：Java基础面试题以及个人总结">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java基础面试题-5day">
-<meta property="og:url" content="http://example.com/2024/01/24/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-5day/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="YLXOVO">
+<meta property="og:url" content="http://example.com/archives/2024/06/index.html">
 <meta property="og:site_name" content="YLXOVO">
-<meta property="og:description" content="摘要：Java基础面试题以及个人总结">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-01-24T15:12:43.000Z">
-<meta property="article:modified_time" content="2024-01-24T15:15:16.726Z">
 <meta property="article:author" content="YLXOVO">
-<meta property="article:tag" content="Java Java面试题">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="YLXOVO" type="application/atom+xml">
@@ -204,212 +199,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java基础面试题-5day" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Java基础面试题-5day
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2024" class="archive-year">2024</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2024/06/18/redis%E5%AE%9E%E6%88%98%E8%AF%BE%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2024-06-18T14:14:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-06-18</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2024/06/18/redis%E5%AE%9E%E6%88%98%E8%AF%BE%E7%A8%8B/">redis实战课程</a>
     </h1>
   
 
-        
-        <a href="/2024/01/24/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-5day/" class="archive-article-date">
-  	<time datetime="2024-01-24T15:12:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>摘要：Java基础面试题以及个人总结</p>
-<span id="more"></span>
-<h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><ol>
-<li>什么是泛型？有什么用？</li>
-</ol>
-<p>泛型是jdk5引入的新特性，通过泛型可以提高代码的可读性和稳定性；当我们使用泛型时，传入的对象类型必须是指定的泛型类型，否则就会报错</p>
-<ol start="2">
-<li>泛型的使用方式有哪些？</li>
-</ol>
-<p>一是泛型类<br>二是泛型接口<br>三是泛型方法<br>泛型类，一般在实例化的时候需要指定泛型的类型</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span>&lt;T&gt;&#123;</span><br><span class="line">	<span class="keyword">private</span> String name ;</span><br><span class="line">	<span class="keyword">public</span> Person&lt;T&gt;&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">实例化</span><br><span class="line">Person&lt;ming&gt; person = <span class="keyword">new</span> <span class="title class_">Person</span>&lt;ming&gt;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>泛型接口，</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Generator</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">public</span> T <span class="title function_">method</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实现接口，指定泛型类型</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">GeneratorImpl</span>&lt;T&gt; <span class="keyword">implements</span> <span class="title class_">Generator</span>&lt;String&gt;&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">method</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现接口，不指定泛型类型</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">GeneratorImpl</span>&lt;T&gt; <span class="keyword">implements</span> <span class="title class_">Generator</span>&lt;T&gt;&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> T <span class="title function_">method</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<pre><code>泛型方法
-</code></pre>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt; E &gt; <span class="keyword">void</span> <span class="title function_">printArray</span><span class="params">( E[] inputArray )</span></span><br><span class="line">&#123;</span><br><span class="line">      <span class="keyword">for</span> ( E element : inputArray )&#123;</span><br><span class="line">         System.out.printf( <span class="string">&quot;%s &quot;</span>, element );</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println();</span><br><span class="line"> &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>在泛型方法中，泛型只是一个占位符，使用了泛型的方法是一个静态方法，表示我们使用这个方法可以是任意类型的数组<br>作为一个静态的方法，由于静态方法是先于类加载的，所有对于泛型方法，是不能使用泛型类指定的类型的，只能使用自己声明的泛型</p>
-<ol start="3">
-<li>项目中哪里用到泛型？</li>
-</ol>
-<p>一是自定义的通用接口返回类，使用泛型可以做到返回结果的统一化<br>二是定义Excel处理类，用于动态的导出数据类型<br>三是构建集合处理类（比如Collections 中的 sort, binarySearch 方法）</p>
-<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><ol>
-<li>什么是反射？优缺点<br>反射在很多框架都有体现，主要的作用就是在运行时，可以分析类或者执行类的方法，并且可以直接通过获取到一个类的所有方法和属性，给我们提供了便利。<br>缺点就是会有安全的问题出现，比如反射会无视泛型类型的安全检查，因为泛型类型的安全检查是在编译时期执行的。<br>根据反射的概念，反射是在运行时分析类和执行类的方法的</li>
-<li>反射的应用场景？<br>Java的注解<br>Spring 的注解<br>基于反射的分析类，获取到类，属性，方法，方法上的参数 上的注解，获取到注解之后，可以进行进一步的处理。</li>
-</ol>
-<h1 id="SPI"><a href="#SPI" class="headerlink" title="SPI"></a>SPI</h1><ol>
-<li>什么是SPI？<br>SPI就是服务提供者接口，是专门提供给开发者的接口，一般提供一些扩展框架功能</li>
-<li>SPI和API的区别？<br>API  应用程序编程接口，一个API 表示的是，接口的功能有服务的提供者来实现，包括一些接口的规则，详细的功能，提供一个接口给外界的人使用，调用方不需要知道内部的核心，只需要知道怎么使用调用接口即可<br>SPI 服务提供者接口，接口的规则有调用方来确认，提供给不同的服务开发者进行开发，开发出来的结果都是符合接口调用方的要求。</li>
-</ol>
-<h1 id="序列化和反序列化"><a href="#序列化和反序列化" class="headerlink" title="序列化和反序列化"></a>序列化和反序列化</h1><ol>
-<li>序列化和反序列化分别是什么？<br>序列化在Java中是对 对象 进行序列化<br>当我们要进行网络传输的时候，我们就需要将数据结果或者对象进行序列化，或者是要将文件存储到数据库的之前，存储到缓存之前都需要进行序列化<br>反序列化就是当我们要从数据库，缓存，redis等取出数据的时候，都需要进行反序列化</li>
-<li>序列化对应TCP&#x2F;IP4层模型的哪一层？<br>TCP&#x2F;IP4层模型从上到下分别是 应用层，传输层，网络层，网络接口层<br>OSI 七层模型从上到下分别是 应用层，表示层，会话层，传输层，网络层，数据链路层，物理层<br>OSI模型中的表现层是将应用层的数据进行解码，数据处理的，也就是将对象，数据接口转化为二进制流，所以，序列化对应的是OSI模型的表现层，对应TCP&#x2F;IP则是应用层</li>
-</ol>
-<p>TCP&#x2F;IP 4层模型 的应用层 包含了 OSI模型的应用层，表示层和会话层<br>3. 如果有些字段不想序列化怎么办？<br>给不想序列化的字段（变量）添加transient关键字<br>transient关键字不能用在类和方法上<br>static 修饰的变量无论有没有添加关键字transient都是不支持序列化的<br>4. 常见的序列化协议<br>Hessian、Kryo、Protobuf、ProtoStuff<br>5. 为什么不使用JDK自带的序列化？<br>因为不支持跨语言调用<br>性能差<br>存在安全问题</p>
-<h1 id="Java-IO流"><a href="#Java-IO流" class="headerlink" title="Java IO流"></a>Java IO流</h1><ol>
-<li>什么是IO流<br>IO流就是输入输出流，在Java中分为输入流和输出流<br>根据数据的处理方式又分为 字符流 和 字节流</li>
-</ol>
-<h1 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h1><blockquote>
-<p>代指的是编程语言为了方便程序员开发程序而设计的一种特殊语法，这种语法对编程语言的功能并没有影响。实现相同的功能，基于语法糖写出来的代码往往更简单简洁且更易阅读。</p>
-</blockquote>
-<p>Java虚拟机不能够识别Java的语法糖，必须相同Java的编译器进行解糖之后才能被Java虚拟机识别。</p>
-<ol>
-<li>常见的语法糖有哪些？</li>
-</ol>
-<p>泛型，自动装箱，自动拆箱，变长参数，枚举，内部类，增强for循环等等。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Java Java面试题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/01/24/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-5day/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2024/02/03/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-6day/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java基础面试题-6day
-        
-      </div>
-    </a>
   
   
-    <a href="/2024/01/23/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98-3day/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java基础面试题-3day</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%9B%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">泛型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84"><span class="toc-number">2.</span> <span class="toc-text">反射</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SPI"><span class="toc-number">3.</span> <span class="toc-text">SPI</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">4.</span> <span class="toc-text">序列化和反序列化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-IO%E6%B5%81"><span class="toc-number">5.</span> <span class="toc-text">Java IO流</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E7%B3%96"><span class="toc-number">6.</span> <span class="toc-text">语法糖</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -430,8 +273,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
